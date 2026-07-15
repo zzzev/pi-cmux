@@ -440,6 +440,10 @@ function isCmuxUnavailableError(text: string): boolean {
 }
 
 export default function cmuxSidebarExtension(pi: ExtensionAPI) {
+	if (process.env.PI_SUBAGENT_CHILD === "1") {
+		return;
+	}
+
 	if (!getBooleanFromEnv("PI_CMUX_SIDEBAR", true) || !hasCmuxWorkspaceContext()) {
 		return;
 	}

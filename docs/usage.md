@@ -4,7 +4,7 @@ Detailed usage for the cmux integrations bundled with `pi-cmux`.
 
 ## Notifications
 
-`cmux-notify` sends `cmux notify` alerts when Pi finishes a run.
+`cmux-notify` sends `cmux notify` alerts when Pi finishes a run. It stays inactive in `pi-subagents` child processes so a child cannot signal that the parent run is finished.
 
 Notification fields:
 - title: `Pi` by default
@@ -31,7 +31,7 @@ PI_CMUX_NOTIFY_LEVEL=disabled  # off
 
 ## Sidebar status/log
 
-`cmux-sidebar` updates the cmux right sidebar while Pi runs. It only activates inside a cmux workspace (`CMUX_WORKSPACE_ID` is present).
+`cmux-sidebar` updates the cmux right sidebar while Pi runs. It only activates inside a cmux workspace (`CMUX_WORKSPACE_ID` is present) and stays inactive in `pi-subagents` child processes.
 
 It uses:
 - `cmux set-status` for a temporary Pi status pill while Pi is running, using tools, waiting, done, or errored

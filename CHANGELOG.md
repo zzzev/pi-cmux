@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Suppress sidebar completion state, surface flashes, and notifications in pi-subagents child processes so only the parent Pi run signals completion.
+
 ## [0.1.16] - 2026-05-27
 
 ### Added

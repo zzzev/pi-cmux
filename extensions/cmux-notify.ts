@@ -224,6 +224,10 @@ function createEmptyRunState(): RunState {
 }
 
 export default function cmuxNotifyExtension(pi: ExtensionAPI) {
+	if (process.env.PI_SUBAGENT_CHILD === "1") {
+		return;
+	}
+
 	const thresholdMs = getNumberFromEnv("PI_CMUX_NOTIFY_THRESHOLD_MS", DEFAULT_THRESHOLD_MS);
 	const debounceMs = getNumberFromEnv("PI_CMUX_NOTIFY_DEBOUNCE_MS", DEFAULT_DEBOUNCE_MS);
 	const notifyLevel = getNotifyLevelFromEnv();

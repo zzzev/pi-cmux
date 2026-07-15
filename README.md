@@ -12,6 +12,8 @@ Pi package with [cmux](https://www.cmux.dev)-powered terminal integrations for [
 
 `pi-cmux` keeps Pi terminal-native by delegating notifications, sidebar status, pane splits, tab naming, pluggable tool commands, directory jumps, review handoff, and continuation workflows to cmux.
 
+When Pi delegates through `pi-subagents`, child processes do not emit sidebar completion states, surface flashes, or notifications for the parent terminal. Completion signals remain tied to the parent Pi run.
+
 ## Install
 
 ```bash
