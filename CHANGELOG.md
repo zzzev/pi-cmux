@@ -2,9 +2,15 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Use one stable context-first sidebar status: `ctx N% · Turn N` while running and `ctx N% · $cost` when complete.
+- Fade the completion check to quiet text instead of clearing the final status.
+- Remove sidebar progress bars, cmux log entries, and surface flashes.
+
 ### Fixed
 
-- Suppress sidebar completion state, surface flashes, and notifications in pi-subagents child processes so only the parent Pi run signals completion.
+- Suppress sidebar completion state and notifications in pi-subagents child processes so only the parent Pi run signals completion.
 
 ## [0.1.16] - 2026-05-27
 

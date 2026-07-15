@@ -37,7 +37,7 @@ If Pi is already running:
 | Workflow | Commands | Summary |
 |---|---|---|
 | Notifications | automatic | Sends `cmux notify` when Pi waits, completes work, or errors. |
-| Sidebar status/log | automatic | Updates cmux status, progress, logs, and surface flash while Pi runs. |
+| Sidebar status | automatic | Shows stable context, turn, and cost status while Pi runs. |
 | Split Pi | `/cmv [prompt]`, `/cmh [prompt]` | Opens a new right/lower split with Pi in the same project. |
 | Run a tool | `/cmo <cmd>`, `/cmoh <cmd>`, `/cmt <cmd>` | Opens a split or tab and runs a shell command in the same project. |
 | Pluggable tools | custom `/<name>` | Registers cmux split shortcuts from `pi-cmux.commands` settings. |
@@ -69,11 +69,9 @@ Detailed command examples: [docs/usage.md](docs/usage.md).
 | `PI_CMUX_NOTIFY_INCLUDE_RESPONSE` | `0` | Append truncated final assistant response to non-error notifications. |
 | `PI_CMUX_NOTIFY_THRESHOLD_MS` | `15000` | Duration threshold for `Task Complete` vs `Waiting`. |
 | `PI_CMUX_SIDEBAR` | `1` | Set `0` to disable sidebar integration. |
-| `PI_CMUX_SIDEBAR_FLASH` | `all` | `all`, `error`, or `disabled`. |
-| `PI_CMUX_SIDEBAR_PROGRESS` | `1` | Set `0` to disable sidebar progress updates. |
-| `PI_CMUX_SIDEBAR_TOKENS` | `1` | Include compact live cumulative session token counts in sidebar progress and summaries. |
-| `PI_CMUX_SIDEBAR_COST` | `0` | Include reported model cost alongside token counts. |
-| `PI_CMUX_SIDEBAR_LOG_TOOLS` | `0` | Set `1` to log every tool result. |
+| `PI_CMUX_SIDEBAR_FINAL_CLEAR_MS` | `2500` | Delay before the completion check fades to quiet text. |
+| `PI_CMUX_SIDEBAR_STATUS_KEY` | surface-specific | Override the cmux status key. |
+| `PI_CMUX_SIDEBAR_STATUS_PRIORITY` | `80` | Set the cmux status priority. |
 
 Custom split shortcuts can be registered under `pi-cmux.commands` in `~/.pi/agent/settings.json` or `.pi/settings.json`; see [docs/usage.md](docs/usage.md#pluggable-tool-commands).
 
